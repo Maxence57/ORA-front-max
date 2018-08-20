@@ -1,0 +1,80 @@
+.quest-card {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+mat-card-header {
+    width: 50%;
+    margin: 5vh auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+:host ::ng-deep .mat-card-header-text {
+    margin: 0 auto; 
+  }
+
+.btn-ctn {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+button {
+    margin-top: 2vmin;
+}
+
+.check-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 2vmin auto;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.example-margin {
+    margin: 0 10px;
+  }
+
+
+.enonce-ctn {
+    text-align: start;
+    width: 80%;
+    font-size: 2vmin;
+}
+
+.question-card-ctn {
+    margin-bottom: 5vmin;
+}
+
+.flex-label {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+
+
+.quest-card {
+    width: 80%;
+    margin: 5vmin auto 10vmin auto;
+    background: var(--card-background-color);
+  }
+
+
+.enonce-ctn {
+    font-size: 1.5vmin;
+}

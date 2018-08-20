@@ -1,0 +1,133 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  
+  .example-selected-value {
+    margin: 15px 0;
+  }
+
+
+/* apparence des checkboxs */
+.check-ctn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+:host ::ng-deep .mat-checkbox-inner-container {
+  margin: auto;
+  margin-right: 0.5vmin;
+}
+
+/* on sait toujours pas trop gerer host et ng deep... */
+:host ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  width: 10vmin;
+  margin-right: 3vmin;
+  text-align: start;
+}
+
+:host ::ng-deep .check-domaine .mat-checkbox-layout .mat-checkbox-label {
+  width: 15vmin;
+  margin-right: 3vmin;
+  text-align: start;
+}
+
+
+.card-filter {
+  width: 80%;
+  margin: 5vmin auto 10vmin auto;
+  background: var(--card-background-color);
+}
+
+
+
+
+.card-filter h2 {
+  margin-bottom: 4vmin;
+}
+
+.card-niveau {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.mat-button-toggle-group {
+  width: auto;
+  margin: 0 auto;
+}
+
+.mat-accordion {
+  margin-top: 2vh;
+}
+
+.input-filter {
+  margin: 2vh auto 0vh auto;
+  width: 30vmin;
+}
+
+.time-filter-card {
+  margin-top: 2vh;
+}
+
+.time-filter-ctn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mat-input-element {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+
+
+.path-nav {
+  display: flex;
+  position: absolute;
+  top: 8vmin;
+}
+
+
+
+
+.mat-button-toggle {
+  color: black;
+}
+
+.mat-button-toggle-checked {
+  background-color: var(--main-color-light);
+  color: white;
+}
+
+.btn-ctn {
+  margin: 3vmin auto;
+  width: 20vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  margin-top: 2vmin;
+}

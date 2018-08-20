@@ -1,0 +1,106 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a><a routerLink="/home"> Accueil /</a>
+</div>
+
+<mat-card class="card-filter">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Créer un questionnaire personnalisé</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+
+    <div class="form-group">
+
+      <!-- choix des languages à évaluer  -->
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Languages à évaluer
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="check-ctn">
+            <div *ngFor="let item of languages; let i = index;">
+              <mat-checkbox [checked]="item.checked" (change)="onChangeNiveau(item)">
+                {{item.label}}
+              </mat-checkbox>
+            </div>
+          </div>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+      <!-- choix des catégories GCM à évaluer -->
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Catégorie GCM à évaluer
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+
+          <div class="check-ctn">
+            <div *ngFor="let item of categoriesGCM; let i = index;">
+              <div>   
+                <mat-checkbox class="check-domaine" [checked]="item.checked" (change)="onChangeCategorie(item)">
+                  {{item.label}}
+                </mat-checkbox>
+            </div>
+            </div>
+          </div>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <!-- choix du niveau de diffculté -->
+      <mat-card class="card-niveau">
+        <mat-card-header>
+          <mat-card-title>
+            Niveau de diffculté
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-button-toggle-group #niveau="matButtonToggleGroup" (change)="setFilterNiveau(niveau)">
+          <mat-button-toggle value="Simple">Simple</mat-button-toggle>
+          <mat-button-toggle value="Moyen">Moyen</mat-button-toggle>
+          <mat-button-toggle value="Complexe">Complexe</mat-button-toggle>
+        </mat-button-toggle-group>
+      </mat-card>
+
+
+      <!-- gérer le temps exact du questionnaire et le temps donné au candidat  -->
+      <mat-card class="time-filter-card">
+        <mat-card-header>
+          <mat-card-title>
+            Gérer le temps du questionnaire
+          </mat-card-title>
+        </mat-card-header>
+
+        <div class="time-filter-ctn">
+          <mat-form-field class="input-filter">
+            <input matInput placeholder="Durée du questionnaire (min)" type="number" step="5" 
+              value="60" min="0" max="120" autocomplete="off" [(ngModel)]="timeQuestSaisi" name="timeQuestSaisi">
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <input matInput placeholder="Durée donnée au candidat (min)" type="number" step="5" 
+              value="50" min="0" max="120" autocomplete="off" [(ngModel)]="timeCandidatSaisi" name="timeCandidatSaisi">
+          </mat-form-field>
+        </div>
+      </mat-card>
+      
+    </div>
+
+
+    <div class="btn-ctn">
+      <button  mat-raised-button color="primary" class="btn btn-primary" (click)="genererQuestionnaire(timeQuestSaisi,timeCandidatSaisi)">Générer le questionnaire</button>
+      <button mat-raised-button color="primary" class="btn btn-primary" (click)="goQuestionnaire(timeQuestSaisi)">Annuler</button>
+    </div>
+
+</mat-card>

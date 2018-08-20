@@ -1,0 +1,538 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a>
+  <a routerLink="/home"> Accueil /</a>
+</div>
+
+
+<mat-card class="main-card">
+
+  <mat-card-title>
+    <h4>Critères de personnalité</h4>
+  </mat-card-title>
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <mat-card-title>
+        <h6>Dynamique personnelle</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Energie, Enthousiasme
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Sens des responsabilités
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur la dynamique personnelle"></textarea>
+      </mat-form-field>
+
+
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Relationnel et communication</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Expression orale
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Travail en équipe
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Respect des autres
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur le relationnel et la communication"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Agilité intellectuelle</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Esprit d'analyse
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Esprit de synthèse
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Capacité d'apprentissage
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur l'agilité intellectuelle"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Sens du service</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Orientation Satisfaction Clients (internes et/ou externes)
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Réactivité / Disponibilité
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Force de proposition
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur le sens du service"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Contrôle de soi</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Gestion du stress
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Confiance en soi
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur le contrôle de soi"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Organisation / Méthode</h6>
+      </mat-card-title>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Autonomie
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Rigueur
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="critere-ctn">
+        <div class="critere-label">
+          Gestion des priorités
+          <div class="line"></div>
+        </div>
+
+        <div class="critere-input">
+          <mat-form-field>
+            <mat-select placeholder="Niveau">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let mark of marks" [value]="mark">
+                {{mark}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Remarques sur l'organisation et la méthode"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Compétences fonctionnelles</h6>
+      </mat-card-title>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Compétences fonctionnelles"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Compétences managériales"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Compétences commerciales"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Compétences techniques</h6>
+      </mat-card-title>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Compétences techniques"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Langues (autres que celles indiquées dans l'authentification)</h6>
+      </mat-card-title>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Langue 1">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Niveau">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Test">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Langue 2">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Niveau">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Test">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Langue 3">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Niveau">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Test">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Langue 4">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Niveau">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Test">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Appréciation générale</h6>
+      </mat-card-title>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Points positifs"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Points de vigilance / Axes de développement"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content>
+    <mat-card>
+      <mat-card-title>
+        <h6>Avis pour ce recrutement</h6>
+      </mat-card-title>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Avis">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let commentaireRecrutement of commentaireRecrutements" [value]="commentaireRecrutement">{{commentaireRecrutement}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Points de vigilance / Axes de développement"></textarea>
+      </mat-form-field>
+    </mat-card>
+  </mat-card-content>
+
+  <div class="btn-ctn">
+    <button mat-raised-button color="primary" class="btn btn-primary" routerLink="/home">Suivant</button>
+  </div>
+
+</mat-card>

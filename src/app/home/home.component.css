@@ -1,0 +1,46 @@
+.main-home-ctn {
+    position: relative;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    height: 100%;
+    margin: 15vh auto;
+} 
+
+.path-nav {
+    display: flex;
+    position: absolute;
+}
+
+
+
+
+.list-ctn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.row-ctn {
+    margin-top: 2vmin;
+    font-size: 2vmin;
+}
+
+:host ::ng-deep .mat-card-header-text {
+    /* CSS styles go here */
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+.texte-fin-questionnaire {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-filter {
+    margin: 2vh auto 0vh auto;
+    width: 30vmin;
+  }
+  
+  .mat-input-element {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .path-nav {
+    display: flex;
+    position: absolute;
+    top: 8vmin;
+  }
+  
+  .btn-ctn {
+      margin: 3vmin auto;
+      width: 50vmin;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+  .btn {
+      margin-top: 2vmin;
+    }
+    
+    
+  .info-global-ctn {
+      display: flex;
+      flex-direction: column;
+    }
+    
+  .main-card {
+      width: 80%;
+      margin: 5vmin auto 10vmin auto;
+      background: var(--card-background-color);
+    }
+    
+    
+.mat-button-toggle-group{
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+  }
+  
+.mat-button-toggle {
+    color: black;
+  }
+  
+.mat-button-toggle-checked {
+    background-color: var(--main-color-light);
+    color: white;
+  }
+  
+
+  
+.mat-input-element {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+.mat-button-toggle-group-niveau{
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .example-form {
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

@@ -1,0 +1,106 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a>
+  <a routerLink="/home"> Accueil /</a>
+</div>
+
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Proposer une question</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+
+  <mat-card>
+    <mat-card-title>
+      <h4>Dans quelle(s) catégorie(s) placer cette question ?</h4>
+    </mat-card-title>
+
+    <!-- choix de la (les) catégories GCM dans la quelle on place la proposition -->
+    <mat-card-content>
+      <div class="test-check">
+        <div *ngFor="let categorie of categoriesGcmCheckArray; let i_gcm = index;">
+          <mat-checkbox [checked]="categorie.checked" (change)="onChangeCategorie(categorie,i_gcm)">
+            {{categorie.label}}
+          </mat-checkbox>
+        </div>
+      </div>
+    </mat-card-content>
+
+
+    <!-- on parcout chaque catégorie et on regarde si on a checké la case -->
+    <div *ngFor="let categorie of categoriesGcmCheckArray; let i=index;">
+      <!-- si on a checké la catégorie, on affiche la liste déroulante -->
+      <div *ngIf="categorie.checked" class="list-accordion">
+
+        <!-- liste déroulante pour chaque catégorie GCM cochée -->
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{categorie.label}}
+              </mat-panel-title>
+              <mat-panel-description>
+                Niveau et domaine de la question
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- choix du domaine (languages de prog) et du niveau de la question poour la cat GCM associée-->
+            <div class="niv-domaine-ctn">
+              <!-- choix du domaine de la proposition -->
+              <div class="domaine-ctn">
+                <h4>Domaine</h4>
+                <div class="test-check">
+                  <div *ngFor="let domaine of domainesCheckArray; let i_domaine = index;">
+                    <mat-checkbox [checked]="domaine.checked" (change)="onChangeDomaine(domaine,i_domaine)">
+                      {{domaine.label}}
+                    </mat-checkbox>
+                  </div>
+                </div>
+              </div>
+
+              <!-- choix du niveau de la proposition -->
+              <div class="niv-ctn">
+                <h4>Niveau (de 0 à 10)</h4>
+                <mat-form-field>
+                  <input [(ngModel)]="niveau" class="niv-input" matInput type="number" min="0" max="10" step="1" value="0">
+                </mat-form-field>
+              </div>
+            </div>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </mat-card>
+
+
+  <mat-card class="card-style">
+    <mat-card-header>
+      <mat-card-title>
+        <h4>Type de questions et langues</h4>
+      </mat-card-title>
+    </mat-card-header>
+
+    <!-- choix du type de la proposition -->
+    <mat-card-content>
+      <div class="test-check">
+        <div *ngFor="let type of typeQuestionCheckArray; let i = index;">
+          <mat-checkbox [checked]="type.checked" (change)="onChangeType(type,i)">
+            {{type.label}}
+          </mat-checkbox>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+  <div class="btn-ctn">
+    <button mat-raised-button color="primary" class="btn btn-primary" (click)="goEnonceProposition(niveau)">Suivant</button>
+    <button mat-raised-button color="primary" class="btn btn-primary" (click)="goBack()">Annuler</button>
+  </div>
+
+</mat-card>
+
+<!-- On redirige l'utilisateur vers la page de saisi de l'énoncé et des réponses, en fonction 
+du type de question coché  -->

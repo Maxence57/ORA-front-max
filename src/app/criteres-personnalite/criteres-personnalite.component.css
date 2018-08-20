@@ -1,0 +1,129 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.input-filter {
+  margin: 2vh auto 0vh auto;
+  width: 30vmin;
+}
+
+.mat-input-element {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.path-nav {
+  display: flex;
+  position: absolute;
+  top: 10vmin;
+}
+
+.btn-ctn {
+    margin: 3vmin auto;
+    width: 20vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.btn {
+    margin-top: 2vmin;
+  }
+  
+  
+.info-global-ctn {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.main-card {
+    width: 80%;
+    margin: 5vmin auto 10vmin auto;
+    background: var(--card-background-color);
+  }
+  
+.test-check {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+.categorie-gcm {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.mat-button-toggle-group{
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+  }
+  
+.mat-button-toggle {
+    color: black;
+  }
+  
+.mat-button-toggle-checked {
+    background-color: var(--main-color-light);
+    color: white;
+  }
+  
+.btn-ctn {
+    margin: 3vmin auto;
+    width: 20vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.mat-input-element {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+.mat-button-toggle-group-niveau{
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .example-form {
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+ .example{
+   position: relative;
+   text-align: left;
+
+ }
+
+ .critere-ctn {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: auto 10px;
+}
+
+.critere-label {
+  flex-grow: 4;
+  color: grey;
+  text-align: left;
+}
+
+.line{
+  width: 100%;
+  margin-top: 4px;
+  border-bottom: 1px solid grey;
+  }
+
+.critere-input {
+  margin: 0 20px;
+}

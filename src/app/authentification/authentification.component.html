@@ -1,0 +1,254 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a>
+  <a routerLink="/home"> Accueil /</a>
+</div>
+
+
+
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Authentification du candidat</h4>
+    </mat-card-title>
+  </mat-card-header>
+
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <!--INFORMATIONS OBLIGATOIRES -->
+      <mat-card-title>
+        <h4>Veuillez remplir les informations suivantes</h4>
+        <h6>Seules les informations marquées d'un astérisque sont obligatoires</h6>
+      </mat-card-title>
+    </mat-card>
+  </mat-card-content>
+
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <mat-card-title>
+        <h4>Formulaire d'identité</h4>
+      </mat-card-title>
+
+      <mat-form-field>
+        <input matInput placeholder="Nom" [formControl]="nomFormControl">
+        <mat-error *ngIf="nomFormControl.hasError('required')">
+          Veuillez entrer votre nom
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Prénom" [formControl]="prenomFormControl">
+        <mat-error *ngIf="prenomFormControl.hasError('required')">
+          Veuillez entrer votre ou vos prénom(s)
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Genre" [formControl]="genreFormControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="genreFormControl.hasError('required')">
+          Veuillez renseigner votre genre
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date de naissance" [formControl]="birthdateFormControl">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="birthdateFormControl.hasError('required')">
+          Veuillez renseigner votre date de naissance
+        </mat-error>
+      </mat-form-field>
+
+      <table>
+        <tr>
+          <td>
+            <mat-form-field class="nationality">
+              <mat-select placeholder="Nationalité" [formControl]="nationalityFormControl">
+                <mat-option *ngFor="let nationality of nationalities" [value]="nationality">{{nationality}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf=" autresFormControl.hasError('required') && nationalityFormControl.hasError('required')">
+                Veuillez sélectionner votre nationalité ou la saisir si non présente dans la liste
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <div *ngIf="nationalityFormControl.value==['Autre']">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Autre" [formControl]="autresFormControl">
+                <mat-error *ngIf="autresFormControl.hasError('required')">
+                  Veuillez saisir votre adresse
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <mat-form-field>
+        <input matInput placeholder="Adresse mail" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Veuillez entrer une adresse mail valide
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Veuillez entrer votre adresse mail
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput placeholder="Adresse" [formControl]="adresseFormControl">
+        <mat-error *ngIf="adresseFormControl.hasError('required')">
+          Veuillez entrer votre adresse
+        </mat-error>
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Ville" [formControl]="cityFormControl">
+              <mat-error *ngIf="cityFormControl.hasError('required')">
+                Veuillez renseigner votre ville
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput #postalCode placeholder="Code Postal" [formControl]="postalcodeFormControl">
+              <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+              <mat-error *ngIf="postalcodeFormControl.hasError('required')">
+                Veuillez renseigner votre code postal
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Pays" [formControl]="countryFormControl">
+              <mat-error *ngIf="countryFormControl.hasError('required')">
+                Veuillez renseigner votre pays de résidence
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+          <span matPrefix>+ &nbsp;</span>
+          <input type="tel" matInput placeholder="Téléphone portable" [formControl]="portableFormControl">
+          <mat-error *ngIf="portableFormControl.hasError('required')">
+            Veuillez renseigner votre numéro de téléphone portable
+          </mat-error>
+        </mat-form-field>
+
+      </form>
+
+      <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+          <span matPrefix>+ &nbsp;</span>
+          <input type="tel" matInput placeholder="Téléphone fixe" [formControl]="telephonefixeFormControl">
+          <mat-error *ngIf="telephonefixeFormControl.hasError('required')">
+            Veuillez renseigner votre numéro de téléphone fixe
+          </mat-error>
+        </mat-form-field>
+
+      </form>
+
+    </mat-card>
+  </mat-card-content>
+
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <mat-card-title>
+        <h4>Niveau professionnel</h4>
+      </mat-card-title>
+
+      <mat-form-field>
+        <input matInput placeholder="Dernier diplôme obtenu" [formControl]="lastdegreeFormControl">
+        <mat-error *ngIf="lastdegreeFormControl.hasError('required')">
+          Veuillez saisir votre dernier diplôme obtenu
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Année du dernier diplôme obtenu" [formControl]="lastdegreeyearFormControl">
+        <mat-error *ngIf="lastdegreeyearFormControl.hasError('minLength(4)')">
+          Veuillez entrer une année valide
+        </mat-error>
+        <mat-error *ngIf="lastdegreeyearFormControl.hasError('maxLength(4)')">
+          Veuillez entrer une année valide
+        </mat-error>
+        <mat-error *ngIf="lastdegreeyearFormControl.hasError('required')">
+          Veuillez saisir l'année du dernier diplôme obtenu
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Niveau en Anglais" [formControl]="englishlevFormControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="englishlevFormControl.hasError('required')">
+          Veuillez renseigner votre niveau en anglais
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Niveau en Allemand" [formControl]="germanlevFormControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="germanlevFormControl.hasError('required')">
+          Veuillez renseigner votre niveau en allemand
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Niveau en Espagnol" [formControl]="spanishlevFormControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="spanishlevFormControl.hasError('required')">
+          Veuillez renseigner votre niveau en espagnol
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Niveau en Italien" [formControl]="italianlevFormControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let langlevel of langlevels" [value]="langlevel">{{langlevel}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="italianlevFormControl.hasError('required')">
+          Veuillez renseigner votre niveau en italien
+        </mat-error>
+      </mat-form-field>
+
+    </mat-card>
+  </mat-card-content>
+
+    <mat-card-content>
+      <mat-card>
+        <mat-checkbox [formControl]="checkboxFormControl" [(ngModel)]="value" (change)="onChange($event)">J'ai lu et j'accepte les conditions de stockage de mes données.</mat-checkbox>
+        <mat-error *ngIf="isSelected">
+          Votre authentification ne pourra-t-être validée que lorsque vous aurez acceptez les conditions de stockage de vos données
+        </mat-error>
+      </mat-card>
+    </mat-card-content>
+
+    
+  <div class="btn-ctn">
+    <button mat-raised-button color="primary" class="btn btn-primary" (click)="test()">Test</button>
+  </div>
+
+  <div class="btn-ctn">
+    <button mat-raised-button color="primary" class="btn btn-primary" routerLink="/choixQuestionnaire">Suivant</button>
+  </div>
+
+</mat-card>

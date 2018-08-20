@@ -1,0 +1,67 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a>
+  <a routerLink="/home"> Accueil /</a>
+</div>
+
+<mat-card class="main-card">
+  <mat-card-title>
+    <h5>Choix du type de questionnaire</h5>
+  </mat-card-title>
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date du questionnaire" [formControl]="dateFormControl">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dateFormControl.hasError('required')">
+          Veuillez renseigner la date
+        </mat-error>
+      </mat-form-field>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ville, Pays" [formControl]="lieuFormControl">
+          <mat-error *ngIf="lieuFormControl.hasError('required')">
+            Veuillez renseigner la ville et le pays dans lequel vous vous trouvez
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Salon">
+        </mat-form-field>
+      </form>
+    </mat-card>
+  </mat-card-content>
+
+
+  <mat-card-content>
+    <mat-card class="info-global-ctn">
+      <div class="row-ctn">
+        <div class="legende-ctn">
+          <p>Sélectionner
+            <b>Questionnaire par défaut</b> pour choisir un questionnaire parmi ceux proposés par défaut</p>
+        </div>
+        <div class="btn-ctn">
+          <button mat-raised-button color="primary" class="btn btn-primary" routerLink="/home">Questionnaire par défaut</button>
+        </div>
+      </div>
+
+      <div class="row-ctn">
+        <div class="legende-ctn">
+          <p>Sélectionner
+            <b>Créer un questionnaire personnalisé</b> pour configurer un questionnaire unique adapté à vos attentes</p>
+        </div>
+        <div class="btn-ctn">
+          <button mat-raised-button color="primary" class="btn btn-primary" routerLink="/criteresPersonnalite">Créer un questionnaire personnalisé</button>
+        </div>
+      </div>
+
+    </mat-card>
+  </mat-card-content>
+
+  <br/>
+
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="test()">Test</button>
+
+</mat-card>

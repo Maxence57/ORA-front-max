@@ -1,0 +1,14 @@
+.main-login-ctn {
+    position: relative;
+    width: 80%;
+    margin: 15vh auto;
+} 
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-container {
+    margin-top: 5vh;
+}

@@ -1,0 +1,148 @@
+<div class="path-nav">
+  <a routerLink="/">Changer d'utilisateur / </a>
+  <a routerLink="/home"> Accueil /</a>
+</div>
+
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Créer un profil</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+
+  <mat-card class="info-global-ctn" >
+    <!--INFORMATIONS OBLIGATOIRES -->
+    <mat-card-title>
+      <h4>Compléter les informations</h4>
+    </mat-card-title>
+
+    <mat-form-field>
+      <input matInput placeholder="Identifiant" [formControl]="idFormControl">
+      <mat-error *ngIf="idFormControl.hasError('required')">
+        Veuillez entrer l'identifiant que vous souhaitez utiliser
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" type ="password" [formControl]="pwdFormControl">
+      <mat-error *ngIf="pwdFormControl.hasError('required')">
+        Veuillez entrer un mot de passe
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Confirmer votre mot de passe" type ="password" [formControl]="pwdagainFormControl">
+      <mat-error *ngIf="pwdagainFormControl.hasError('required')">
+        Veuillez confirmer votre mot de passe
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nom" [formControl]="nomFormControl">
+      <mat-error *ngIf="nomFormControl.hasError('required')">
+        Veuillez entrer votre nom
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Prénom" [formControl]="prenomFormControl">
+      <mat-error *ngIf="prenomFormControl.hasError('required')">
+        Veuillez entrer votre ou vos prénom(s)
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Genre" [formControl]="genreFormControl">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="genreFormControl.hasError('required')">
+        Veuillez renseigner votre genre
+      </mat-error>
+    </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Adresse mail" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Veuillez entrer une adresse mail valide
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Veuillez entrer votre adresse mail
+        </mat-error>
+      </mat-form-field>
+    
+  
+  </mat-card>
+
+  <mat-card class="categorie-gcm">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>  
+            Compléter votre statut GCM au sein d'Atos
+          </h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-header>
+          <mat-card-title>
+            <h4>  
+              Catégorie GCM
+            </h4>
+          </mat-card-title>
+        </mat-card-header>
+
+      <mat-button-toggle-group #niveau="matButtonToggleGroup" (change)="setFilterNiveau(niveau)">
+          <mat-button-toggle value="Analyst Developer">Analyst Developer</mat-button-toggle>
+          <mat-button-toggle value="Project Manager">Project Manager</mat-button-toggle>
+          <mat-button-toggle value="System Manager">System Manager</mat-button-toggle>
+          <mat-button-toggle value="Business Intelligence">Business Intelligence</mat-button-toggle>
+          <mat-button-toggle value="Arc">Arc</mat-button-toggle>
+          <mat-button-toggle value="Tec">Tec</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <mat-card-header>
+          <mat-card-title>
+            <h4>  
+              Niveau GCM
+            </h4>
+          </mat-card-title>
+        </mat-card-header>
+  
+        <mat-button-toggle-group class="mat-button-toggle-group-niveau" #niveau="matButtonToggleGroup" (change)="setFilterNiveau(niveau)">
+          <mat-button-toggle value="1">1</mat-button-toggle>
+          <mat-button-toggle value="2">2</mat-button-toggle>
+          <mat-button-toggle value="3">3</mat-button-toggle>
+          <mat-button-toggle value="4">4</mat-button-toggle>
+          <mat-button-toggle value="5">5</mat-button-toggle>
+          <mat-button-toggle value="6">6</mat-button-toggle>
+          <mat-button-toggle value="7">7</mat-button-toggle>
+          <mat-button-toggle value="8">8</mat-button-toggle>
+          <mat-button-toggle value="9">9</mat-button-toggle>
+         </mat-button-toggle-group>
+
+    </mat-card>
+
+    <mat-card class="categorie-gcm">
+        <mat-card-header>
+            <mat-card-title>
+              <h2>  
+                Statut de l'utilisateur
+              </h2>
+            </mat-card-title>
+          </mat-card-header>
+    
+          <mat-button-toggle-group #niveau="matButtonToggleGroup" (change)="setFilterNiveau(niveau)">
+            <mat-button-toggle value="Administrateur">Administrateur</mat-button-toggle>
+            <mat-button-toggle value="Recruteur">Recruteur</mat-button-toggle>
+            <mat-button-toggle value="Correcteur">Correcteur</mat-button-toggle>
+            <mat-button-toggle value="Redacteur">Redacteur</mat-button-toggle>
+            <mat-button-toggle value="Externe">Externe</mat-button-toggle>
+           </mat-button-toggle-group>
+    </mat-card>
+
+
+<div class="btn-ctn">
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="test()">Suivant</button>
+</div>
+
+</mat-card>

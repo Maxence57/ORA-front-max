@@ -1,0 +1,120 @@
+.main-prop-qcm-ctn {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+} 
+
+.enonce {
+    width: 100vmin;
+}
+
+.saisi-ctn {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+.reponses-ctn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5vmin;
+    align-items: center;
+}
+
+
+.mat-mini-fab.mat-accent {
+    background-color:var(--main-color);
+}
+
+
+
+.rep-row-ctn {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+
+.cleat-button {
+    width: 10px;
+    height: 10px;
+}
+
+
+.btn-end-ctn {
+    margin: 5vmin auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vmin;
+}
+
+.info-sup-ctn {
+    margin-top: 5vmin;
+}
+
+
+.test-affichage {
+    margin-top: 10vmin;
+    margin-bottom: 10vmin;
+}
+
+
+.card-enonce-ctn {
+    width: 80%;
+    margin: 5vmin auto 0 auto;
+    background: var(--card-background-color);
+}
+
+
+
+.reponses-card-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30vmin;
+    background: var(--card-background-color);
+}
+
+
+.card-info-sup {
+    display: flex;
+    flex-direction: column;
+    width: 50vmin;
+    background: var(--card-background-color);
+    margin: 0 auto;
+}
+
+
+.btn-ctn {
+    display: flex;
+    flex-direction: column;
+    width: 30vmin;
+    margin: 5vmin auto;
+}
+
+.btn {
+    margin-top: 2vmin;
+  }
+
+
+.rendu {
+    border: 1px solid black;
+}
+
+CSS
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

@@ -1,0 +1,96 @@
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Valider les poropositions de questions</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+
+
+  <mat-card class="proposition-card" *ngFor="let proposition of listPropositions; let i_proposition = index;">
+    <div class="proposition-ctn">
+
+      <!-- enoncé de la proposition -->
+      <div class="enonce-ctn">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h4>
+                Enoncé : {{proposition.enonce_question}}
+              </h4>
+            </mat-card-title>
+          </mat-card-header>
+
+          <!-- affichage reponses correctes et fausses -->
+          <div class="answer-ctn">
+            <div class="true-rep-ctn">
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Reponses correcte(s)</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <mat-list role="list" *ngFor="let trueAnswer of proposition.answers">
+                    <mat-list-item role="listitem" *ngIf="trueAnswer.validity == true">{{trueAnswer.statement}}</mat-list-item>
+                  </mat-list>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <div class="false-rep-ctn">
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Reponses fausse(s)</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <mat-list role="list" *ngFor="let falseAnswer of proposition.answers; let i_gcm = index;">
+                    <mat-list-item role="listitem" *ngIf="falseAnswer.validity == false">{{falseAnswer.statement}}</mat-list-item>
+                  </mat-list>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+
+      <!-- caractéristique de la proposition -->
+      <div class="detail-proposition-ctn">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h4>
+                Caractéristique de la question
+              </h4>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item role="listitem">Type de question : {{proposition.typeQuestion.type}}</mat-list-item>
+              <mat-list-item role="listitem">Domaine évalué : {{proposition.languageQuestion.name}}</mat-list-item>
+              <mat-list-item role="listitem">Categorie GCM : {{proposition.gcmCategorie.name}}</mat-list-item>
+              <mat-list-item role="listitem">Niveau GCM : {{proposition.gcmLevel.level}}</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+
+    <div class="edit-ctn">
+      <div class="validate-ctn">
+        <button mat-raised-button (click)="validerProposition(proposition)">Valider la proposition</button>
+      </div>
+
+      <div class="supprimer-ctn">
+        <button mat-raised-button (click)="supprimerProposition(proposition)">Supprimer la proposition</button>
+      </div>
+
+    </div>
+  </mat-card>
+
+
+
+
+
+</mat-card>

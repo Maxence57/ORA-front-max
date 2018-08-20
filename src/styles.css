@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+/* couleurs principales utilisées */
+:root {
+    --main-color: #1976D2;
+    --main-color-light: #77a8d6;
+    --card-background-color: #a7bacc65;
+    --main-color-text: #FFFF;
+    --main-background-color: #dadada;
+}
+
+
+/* !important permet de override partout, on le veut car on applique la font de l'app */
+* {
+    font-family: 'Open Sans', sans-serif !important; 
+}
+
+
+/* fenetre générale à partir de laquelle on centre tous les élements */
+.main-window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+}
+
+
+/* conteneur centré avec bandeau fixe et app ctn qui change selon router angular */
+.bandeau {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .bandeau img {
+        height: 5vmin;
+    }
+
+/* conteneur centré */
+.app-ctn {
+    position: relative;
+    width: 90%;
+    height: 95%;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+
+
+/* définition des balises principales */
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:var(--main-color-light); 
+     text-decoration:none;   
+}
+
+h2 {
+    font-size: 2.5vmin;
+}
+
+
+/* on place le chemin de retour à la même place pour toutes les pages */
+.path-nav {
+    display: flex;
+    position: absolute;
+    top: 8vmin;
+  }
+  
+
+/* -------------------------------------------- utile ??? ----------------------------------- */
+
+:host ::ng-deep .mat-card-header-text {
+    /* CSS styles go here */
+    margin: 0 auto;
+  }
+
+
+/* on définit le style valable pour tous les components */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F1F1F1;
+}
+

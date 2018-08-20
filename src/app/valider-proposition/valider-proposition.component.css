@@ -1,0 +1,84 @@
+.test-check {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  :host ::ng-deep .mat-checkbox-inner-container {
+    margin: auto;
+    margin-right: 0.5vmin;
+  }
+  
+  /* on sait toujours pas trop gerer host et ng deep... */
+  :host ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+    width: 15vmin;
+    margin-right: 3vmin;
+    text-align: start;
+  }
+
+.niv-domaine-ctn {
+    display: flex;
+    flex-direction: row;
+}
+
+.niv-ctn {
+    width: 20%;
+}
+
+.domaine-ctn {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vmin;
+}
+
+
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    width: 5vmin;
+}
+
+.list-accordion {
+    margin-top: 5vmin;
+}
+
+
+.card-style {
+    margin-top: 5vmin;
+}
+
+.main-card {
+    background-color:var(--main-background-color);
+}
+
+.proposition-card {
+    margin-top: 5vmin;
+}
+
+.proposition-ctn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.answer-ctn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h4 {
+    font-size: 2vmin;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+.edit-ctn {
+    margin-top: 5vmin;
+}
+
+
+.supprimer-ctn {
+    margin-top: 2vmin;
+}
+

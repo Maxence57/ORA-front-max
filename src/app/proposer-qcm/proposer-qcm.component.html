@@ -1,0 +1,109 @@
+<div class="path-nav">
+    <a routerLink="/">Changer d'utilisateur / </a>
+    <a routerLink="/home"> Accueil /</a>
+    <a routerLink="/proposerquestion"> Proposer une question /</a>
+</div>
+
+<div class="main-prop-qcm-ctn">
+
+    <div class="title-ctn">
+        <h2>Proposer une question type QCM</h2>
+    </div>
+
+    <div class="saisi-ctn">
+
+        <!-- saisi de l'enonce de la proposition -->
+        <div class="enonce-ctn">
+            <mat-card class="card-enonce-ctn">
+                <h4>Saisir l'énoncé</h4>
+                <!-- <mat-form-field class="enonce-fields">
+                    <textarea matInput [(ngModel)]="enonceQuestion"></textarea>
+                </mat-form-field> -->
+                <div class="editor-ctn">
+                    <app-tinymce [(ngModel)]='enonceQuestion' #tinymce='tinymce'></app-tinymce>
+                </div>
+            </mat-card>
+        </div>
+
+        <div>
+            <h4>Rendu</h4>
+            <div class="rendu" [innerHtml]="enonceQuestion | noSanitize"></div>
+        </div>
+
+        <!-- card qui permet d'ajouter des réponses justes reliées à la proposition -->
+        <div class="reponses-ctn">
+            <div class="rep-card-ctn">
+                <mat-card class="reponses-card-ctn">
+                    <h4>Reponses correctes</h4>
+                    <mat-form-field class="enonce-fields">
+                        <input matInput [(ngModel)]="repTrue">
+                    </mat-form-field>
+
+                    <div class="btn-round-ctn">
+                        <button mat-mini-fab>
+                            <mat-icon svgIcon="add-button" (click)="addRepCorrect(repTrue)"></mat-icon>
+                        </button>
+                    </div>
+
+                    <div class="listCorrect">
+                        <mat-list role="list" *ngFor="let repTrue of repCorrectes">
+                            <div class="rep-row-ctn">
+                                <mat-list-item role="listitem">{{repTrue.statement}}</mat-list-item>
+                                <button mat-icon-button (click)="deleteRepTrue(repTrue)" class="clear-btn">
+                                    <mat-icon svgIcon="clear-button"></mat-icon>
+                                </button>
+                            </div>
+                        </mat-list>
+                    </div>
+                </mat-card>
+
+            </div>
+
+
+            <!-- card qui permet d'ajouter des réponses fausses reliées à la proposition -->
+            <div class="rep-card-ctn">
+                <mat-card class="reponses-card-ctn">
+                    <h4>Reponses fausses</h4>
+                    <mat-form-field class="enonce-fields">
+                        <input matInput [(ngModel)]="repFalse">
+                    </mat-form-field>
+
+                    <div class="btn-round-ctn">
+                        <button mat-mini-fab>
+                            <mat-icon svgIcon="add-button" (click)="addRepFalse(repFalse)"></mat-icon>
+                        </button>
+                    </div>
+
+                    <div class="listRep">
+                        <mat-list role="list" *ngFor="let repFalse of repFausses">
+                            <div class="rep-row-ctn">
+                                <mat-list-item role="listitem">{{repFalse.statement}}</mat-list-item>
+                                <button mat-icon-button (click)="deleteRepFalse(repFalse,i)" class="clear-btn">
+                                    <mat-icon svgIcon="clear-button"></mat-icon>
+                                </button>
+                            </div>
+                        </mat-list>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+        <!-- info supplémentaires relatif à la question siasie-->
+        <div class="info-sup-ctn">
+            <mat-card class="card-info-sup">
+                <h4>Informations supplémentaires</h4>
+                <mat-form-field>
+                    <input placeholder="Temps pour répondre a la question (secondes)" autocomplete="off" [(ngModel)]="tempsQuestion" class="niv-input"
+                        matInput type="number" min="0" max="100" step="10" value="0">
+                </mat-form-field>
+            </mat-card>
+        </div>
+
+    </div>
+
+    <div class="btn-ctn">
+        <button class="btn btn-primary" mat-raised-button (click)="publier(enonceQuestion,tempsQuestion)" color="primary">Publier proposition</button>
+        <button class="btn btn-primary" mat-raised-button (click)="goHome()" color="primary">Annuler </button>
+    </div>
+
+</div>

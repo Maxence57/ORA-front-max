@@ -1,0 +1,45 @@
+<div class="path-nav">
+    <a routerLink="/">Changer d'utilisateur / </a>
+    <a routerLink="/home"> Accueil /</a>
+    <a routerLink="/filterquestions"> Créer un questionnaire /</a>
+</div>
+
+<mat-card class="quest-card">
+    <mat-card-header>
+        <mat-card-title>
+            <h2>Questionnaire d'évaluation</h2>
+        </mat-card-title>
+        <mat-card-subtitle>Vous avez {{timeQuestionnaire}} minutes</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <section class="question-ctn" *ngFor="let question of questions; let k = index;">
+            <mat-card class="question-card-ctn">
+
+                <!-- enoncé et le domaine de la question affichée  -->
+                <div class="flex-label">
+                    <div class="enonce-ctn" [innerHtml]="question.enonce_question | noSanitize"></div>
+                    <div class="type-ctn">{{question.languageQuestion.name}}</div>
+                </div>
+
+                <div class="check-ctn">
+                    <section *ngFor="let item of question.answers; let i = index;" class="check-section">
+                        <mat-checkbox [checked]="item.checked" (change)="onChangeAnswer(item,question,i,k)" class="example-margin">
+                            {{item.statement}}
+                        </mat-checkbox>
+                    </section>
+                </div>
+            </mat-card>
+        </section>
+
+        <div class="btn-ctn">
+            <button mat-raised-button color="primary" (click)="nbrErreurs()">Nombres d'erreurs</button>
+            <button mat-raised-button color="primary" (click)="timetotal()">Temps questionnaire</button>
+            <button mat-raised-button color="primary" class="btn btn-primary" (click)="analyseReponses()">Analyse réponses</button>
+            <button mat-raised-button color="primary" class="btn btn-primary" routerLink="/finQuestionnaire">Fin du questionnaire</button>
+
+        </div>
+
+    </mat-card-content>
+</mat-card>
